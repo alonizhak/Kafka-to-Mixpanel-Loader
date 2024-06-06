@@ -1,0 +1,259 @@
+{
+  "kafka_client_event": {
+    "event_name": "CI_TEST",
+    "created_at": "2023-05-30T12:00:00Z",
+    "user_id": "user123",
+    "uid": "anon123",
+    "event_id": "event123",
+    "source": "web",
+    "application": "my_app",
+    "created_at_local": "2023-05-30T12:00:00",
+    "device": {
+      "device": {
+        "type": "mobile",
+        "brand": "Samsung",
+        "model": "Galaxy S10"
+      },
+      "os": {
+        "name": "Android",
+        "version": "10",
+        "platform": "android"
+      },
+      "client": {
+        "type": "browser",
+        "name": "Chrome",
+        "version": "90.0.4430.212",
+        "engine": "Blink"
+      }
+    },
+    "utm": {
+      "source": "google",
+      "medium": "organic",
+      "campaign": "campaign123",
+      "content": "content123",
+      "term": "term123"
+    },
+    "geo": {
+      "city": "New York",
+      "countryCode": "US",
+      "timeZone": "America/New_York",
+      "continent": "North America"
+    },
+    "properties": {
+      "source": "email"
+    }
+  },
+  "kafka_client_event_expected_result": {
+    "event": "CI_TEST",
+    "properties": {
+      "time": "2023-05-30T12:00:00Z",
+      "distinct_id": "user123",
+      "$anon_distinct_id": "anon123",
+      "$insert_id": "event123",
+      "event_id": "event123",
+      "user_id": "user123",
+      "source": "email",
+      "application": "my_app",
+      "created_at_local": "2023-05-30T12:00:00",
+      "device_type": "mobile",
+      "device_brand": "Samsung",
+      "device_model": "Galaxy S10",
+      "os_name": "Android",
+      "os_version": "10",
+      "os_platform": "android",
+      "client_type": "browser",
+      "client_name": "Chrome",
+      "client_version": "90.0.4430.212",
+      "client_engine": "Blink",
+      "utm_source": "google",
+      "utm_medium": "organic",
+      "utm_campaign": "campaign123",
+      "utm_content": "content123",
+      "utm_term": "term123",
+      "$city": "New York",
+      "mp_country_code": "US",
+      "timezone": "America/New_York",
+      "continent": "North America"
+    }
+  },
+  "kafka_client_missing_values": {
+    "event_name": "CI_TEST",
+    "created_at": "2023-05-30T12:00:00Z",
+    "user_id": "user123",
+    "uid": "anon123",
+    "event_id": "event123",
+    "source": "web",
+    "application": "my_app",
+    "created_at_local": "2023-05-30T12:00:00",
+    "device": {
+      "device": {},
+      "os": {},
+      "client": {}
+    },
+    "utm": {},
+    "geo": {},
+    "properties": {}
+  },
+  "kafka_client_missing_values_event_expected_result": {
+    "event": "CI_TEST",
+    "properties": {
+      "time": "2023-05-30T12:00:00Z",
+      "distinct_id": "user123",
+      "$anon_distinct_id": "anon123",
+      "$insert_id": "event123",
+      "event_id": "event123",
+      "user_id": "user123",
+      "application": "my_app",
+      "created_at_local": "2023-05-30T12:00:00",
+      "device_type": null,
+      "device_brand": null,
+      "device_model": null,
+      "os_name": null,
+      "os_version": null,
+      "os_platform": null,
+      "client_type": null,
+      "client_name": null,
+      "client_version": null,
+      "client_engine": null,
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "utm_content": null,
+      "utm_term": null,
+      "$city": null,
+      "mp_country_code": null,
+      "timezone": null,
+      "continent": null
+    }
+  },
+  "processed_event": {
+    "$city": "London",
+    "$insert_id": "event1234",
+    "continent": "Asia",
+    "device_cpu": "Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz",
+    "device_locale": "English",
+    "device_memory": "8101",
+    "device_type": "Desktop",
+    "display_rate": "60",
+    "display_resolution": "1920 x 1080 @ 60Hz",
+    "distinct_id": "642d64dc-1b39-47d7-a7be-e3c01914aa36",
+    "event": "CI_TEST",
+    "event_id": "event1234",
+    "is_test": true,
+    "mp_country_code": "IL",
+    "user_params": "{\"age\":\"29\"}",
+    "os_name": "WindowsPlayer",
+    "os_platform": "Windows 11  (10.0.22621) 64bit",
+    "sdk_format": "",
+    "sdk_version": "3.1.1.0",
+    "session_id": "b1b2daad-5328-4153-903e-69d2ecc9e029",
+    "time": 1685268551106,
+    "timezone": "Asia/Jerusalem",
+    "user_id": "user1234"
+  },
+  "expected_processed_event": {
+    "event": "CI_TEST",
+    "properties": {
+      "$city": "London",
+      "$insert_id": "event1234",
+      "continent": "Asia",
+      "device_cpu": "Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz",
+      "device_locale": "English",
+      "device_memory": "8101",
+      "device_type": "Desktop",
+      "display_rate": "60",
+      "display_resolution": "1920 x 1080 @ 60Hz",
+      "distinct_id": "642d64dc-1b39-47d7-a7be-e3c01914aa36",
+      "event": "CI_TEST",
+      "event_id": "event1234",
+      "is_test": true,
+      "mp_country_code": "IL",
+      "os_name": "WindowsPlayer",
+      "os_platform": "Windows 11  (10.0.22621) 64bit",
+      "sdk_format": "",
+      "sdk_version": "3.1.1.0",
+      "session_id": "b1b2daad-5328-4153-903e-69d2ecc9e029",
+      "time": 1685268551106,
+      "timezone": "Asia/Jerusalem",
+      "user_id": "user1234",
+      "user_params.age": "29"
+    }
+  },
+  "processed_event_missing_values": {
+    "event": "CI_TEST"
+  },
+  "expected_processed_event_missing_values": {
+    "event": "CI_TEST",
+    "properties": {
+      "event": "CI_TEST"
+    }
+  },
+  "set_property_event": {
+    "user_id": "123",
+    "uid":"123",
+    "properties": {
+      "access_code": "123456",
+      "email": "test@example.com",
+      "username": "test_user",
+      "avatarUrl": "http://example.com/avatar"
+    },
+    "geo": {
+      "country": "United States",
+      "countryCode": "US",
+      "continent": "North America",
+      "city": "New York"
+    }
+  },
+  "expected_set_property_event_set_once": {
+    "$token": "project_token",
+    "$distinct_id": "123",
+    "$set_once": {
+      "access_code": "123456",
+      "country": "United States",
+      "country_code": "US",
+      "continent": "North America",
+      "city": "New York",
+      "user_id": "123"
+    }
+  },
+    "expected_identify_event": {
+    "event": "$identify",
+    "properties": {
+      "distinct_id": "123",
+      "$anon_distinct_id": "123"
+    }
+  },
+  "kafka_message_pass": {
+    "topic": "my-topic.users.some_event",
+    "partition": 0,
+    "offset": 42,
+    "key": "my-key",
+    "value": {
+      "event_name": "some_event",
+      "event_id": "1234",
+      "device": {}
+    },
+    "headers": [
+      {
+        "name": "x-group",
+        "value": "your_group_id"
+      }
+    ]
+  },
+    "kafka_message_fail": {
+    "topic": "my-topic.users.some_event",
+    "partition": 0,
+    "offset": 42,
+    "key": "my-key",
+    "value": {
+      "eventName": "some_event",
+      "device": {}
+    },
+    "headers": [
+      {
+        "name": "x-group",
+        "value": "your_group_id"
+      }
+    ]
+  }
+}
