@@ -1,0 +1,11 @@
+version: '2'
+services:
+  mixpanel-uploader:
+    image: mixpanel.uploader:latest
+    network_mode: host
+    volumes:
+      - ./kafka-manager.conf:/conf/application.conf
+    environment:
+      KAFKA_BROKER: localhost:9092
+      ENV: local
+

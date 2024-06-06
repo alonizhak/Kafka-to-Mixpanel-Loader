@@ -1,0 +1,1 @@
+docker build -t mixpanel.uploader:latest .
