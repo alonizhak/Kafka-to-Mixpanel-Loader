@@ -71,3 +71,8 @@ The test data is stored in the test_data.json file. The test cases are designed 
 
 This project works with the Mixpanel Import API to import data into Mixpanel. For more information about the Mixpanel Import API, please refer to the [official documentation](https://developer.mixpanel.com/reference/import-events)
 .
+
+## Architecture Design
+
+![Architecture Design Diagram](mixpanel-loader-design.png)
+
